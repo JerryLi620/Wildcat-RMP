@@ -5,18 +5,22 @@
     "author": "Mingyang Li",
     "manifest_version": 3,
     "permissions": ["storage"],
-    "host_permissions": ["https://course-schedule.davidson.edu/#/"],
-    "backgroud": {
+    "background": {
         "service_worker": "background.js"
     },
     "content_scripts": [
         {
-            "matches":["https://course-schedule.davidson.edu/#/"],
+            "matches":["https://course-schedule.davidson.edu/*"],
             "js": ["contentScript.js"]
         }
     ],
-    "action":{
-        "default_popup": "popup.html",
-        "default_title": "Rate My Davidson Professors "
+    "icons":{
+        "16": "wildcat.png",
+        "48": "wildcat.png",
+        "128":"wildcat.png"
+    },
+    "action": {
+        "default_title": "Wildcat RMP",
+        "default_popup": "popup.html"
     }
 }
