@@ -1,7 +1,7 @@
 {
   "name": "Wildcat RMP",
   "version": "1.0.0",
-  "description": "embeded rate my professor chrome extension to Davidson College course schedule page",
+  "description": "embedded rate my professor chrome extension to Davidson College course schedule page",
   "author": "Mingyang Li",
   "manifest_version": 3,
   "permissions": ["scripting", "activeTab", "tabs"],
@@ -10,7 +10,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*"],
+      "matches": ["https://course-schedule.davidson.edu/*"],
       "js": ["contentScript.js"]
     }
   ],
