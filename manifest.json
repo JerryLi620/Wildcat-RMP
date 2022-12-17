@@ -4,6 +4,7 @@
   "description": "embedded rate my professor chrome extension to Davidson College course schedule page",
   "author": "Mingyang Li",
   "manifest_version": 3,
+  "host_permissions": ["https://search-production.ratemyprofessors.com/*"],
   "permissions": ["scripting", "activeTab", "tabs"],
   "background": {
     "service_worker": "background.js"

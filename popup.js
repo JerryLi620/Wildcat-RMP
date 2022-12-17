@@ -7,13 +7,7 @@ function search() {
       target: { tabId: tabId, allFrames: true },
       files: ["contentScript.js"],
     });
-    chrome.tabs.sendMessage(
-      tabs[0].id,
-      { method: "getSelection" },
-      function (response) {
-        alert(response.data);
-      }
-    );
+    chrome.tabs.sendMessage(tabs[0].id, { method: "getSelection" });
   });
 }
 
