@@ -1,16 +1,24 @@
-chrome.runtime.onMessage.addListener(async function getRate(
-  request,
-  sender,
-  sendResponse
-) {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.method == "getSelection") {
-    const profName = window.getSelection().toString();
-    console.log(profName);
-    console.log(fetchProfIDFromName(profName));
-    let ID = await fetchProfIDFromName(profName);
-    console.log(fetchProfReviewFromID(ID));
+    (async () => {
+      const profName = window.getSelection().toString();
+      let ID = await fetchProfIDFromName(profName);
+      let review = await fetchProfReviewFromID(ID);
+      console.log(review);
+      sendResponse({ info: review });
+    })();
+    return true; // keep the messaging channel open for sendResponse
   }
 });
+
+async function getRate() {
+  const profName = window.getSelection().toString();
+  console.log(profName);
+  console.log(fetchProfIDFromName(profName));
+  let ID = await fetchProfIDFromName(profName);
+  let review = await fetchProfReviewFromID(ID);
+  console.log(review.department);
+}
 
 async function fetchProfIDFromName(name) {
   try {
