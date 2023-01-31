@@ -11,13 +11,16 @@ function search() {
           avgRating: response.info.avgRating,
           numRating: response.info.numRatings,
           difficulty: response.info.avgDifficulty,
-          takeAgain: Math.floor(response.info.wouldTakeAgainPercent),
+          takeAgain: Math.ceil(response.info.wouldTakeAgainPercent) + "%",
           firstName: response.info.firstName,
           lastName: response.info.lastName,
           link:
             "https://www.ratemyprofessors.com/professor?tid=" +
             response.info.legacyId,
         };
+        if (prof.numRating == 0) {
+          prof.takeAgain = 0;
+        }
         addElement(prof);
       }
     );
