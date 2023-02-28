@@ -2,7 +2,7 @@
 This is an embedded rate my professor chrome extension to Davidson College course schedule page. Allowing students to view professor ratings on the Davidson course selection page directly.
  
 How to use:
-1. Install the Google extension
+1. Install the Google extension - [View in Chrome Store](https://chrome.google.com/webstore/detail/wildcat-rmp/chmgajppjpnbgaecnkokpknoejiieame?hl=zh-CN&authuser=0)
 2. Highlight the professor's name you wanna search
 3. Click search button on the popup window
  
